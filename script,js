@@ -1,0 +1,16 @@
+function handleSearch(e) {
+  if (e && e.preventDefault) e.preventDefault();
+
+  var box = document.getElementById('q');
+  var text = box.value ? box.value.trim() : "";
+
+  if (text === "") {
+    alert("Type something to search.");
+    box.focus();
+    return;
+  }
+
+  alert("You searched for: " + text);
+
+  window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(text);
+}
